@@ -72,7 +72,7 @@ class UsersTable extends Table
             ->notEmpty('password')
             ->add('password', 'validFormat',[
                 'rule' => array('custom', '/^(?=.*[A-Z])(?=.*\d).+$/'),
-                'message' => 'Please enter a valid password (Your password should have at least one big letter and one number']);
+                'message' => 'Please enter a valid password (Your password should have at least 1 uppercase letter and 1 digit']);
 
         $validator->add('password', [
                     'compare' => ['rule' => ['compareWith', 'confirm_password'],
@@ -82,7 +82,7 @@ class UsersTable extends Table
         $validator
             ->add('password', 'password', [
                 'rule' => ['minLength', 4],
-                'message' => "Your password should be at least 4 char long",
+                'message' => "Your password should be at least 4 characters",
                 'on' => function ($context) {
                     return $context['data']['role_id'] == '2';
                 }
@@ -91,7 +91,7 @@ class UsersTable extends Table
         $validator
             ->add('password', 'password', [
                 'rule' => ['minLength', 8],
-                'message' => "Your password should be at least 8 char long",
+                'message' => "Your password should be at least 8 characters",
                 'on' => function ($context) {
                     return $context['data']['role_id'] == '1';
                 }

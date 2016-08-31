@@ -12,12 +12,6 @@
         <legend><?= __('Add Role') ?></legend>
         <?php
             echo $this->Form->input('name');
-            // echo $this->Form->input('lft');
-            // echo $this->Form->input('rght');
-//             echo $this->Form->input('parent_id', [
-//                 'options' => $parentCategories,
-//                 'empty' => 'No parent category'
-// ]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
