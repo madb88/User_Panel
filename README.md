@@ -24,3 +24,15 @@ the setup traffic lights.
 
 Read and edit `config/app.php` and setup the 'Datasources' and any other
 configuration relevant for your application.
+
+Functions: 
+- Adding new users (with role) to Panel
+- Password confirmation
+- Edit, delete options 
+- Validation (Admin password - at least 8 characters, User password - at least 4 characters, with one uppercase letter and one digit)
+- Pagination
+- Hashed password
+
+Used:
+- CakePHP 3
+- Bootstrap plugin (html/css)
