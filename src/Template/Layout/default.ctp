@@ -26,8 +26,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('bootstrap.min') ?>
+    <?= $this->Html->script(['bootstrap.min.js', 'jquery-3.1.0.min']) ?>
+
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -35,16 +36,20 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
         <div class="top-bar-section">
-            <ul class="right">
-                <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
-            </ul>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand">User Panel</a>
+                        <ul class="nav navbar-nav">
+                        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
+                        <li><?= $this->Html->link(__('Add new User'), ['action' => 'add']) ?></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- <ul class="right">
+            </ul> -->
         </div>
     </nav>
     <?= $this->Flash->render() ?>
